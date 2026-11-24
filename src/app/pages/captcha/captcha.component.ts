@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { JsonPipe } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { CaptchaStateService } from '../../core/service/captcha-state.service';
 
 @Component({
-  imports: [],
+  imports: [JsonPipe],
   selector: 'app-captcha',
   styleUrl: './captcha.component.scss',
   templateUrl: './captcha.component.html',
 })
-export class CaptchaComponent {}
+export class CaptchaComponent {
+  protected readonly state = inject(CaptchaStateService);
+}

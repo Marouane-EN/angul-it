@@ -1,1 +1,4 @@
-<p>captcha works!</p>
+<pre>{{ state.state() | json }}</pre>
+<button (click)="state.completeStage(state.currentIndex())">Complete stage</button>
+<button (click)="state.goToNextStage(state.currentIndex() - 1)">Previous</button>
+<button (click)="state.faildAttempt(state.currentIndex())">Wrong answer</button>
